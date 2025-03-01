@@ -11,6 +11,7 @@ val spark = SparkSession.builder()
 
 ## Prerequisites
 * java version >= 8
+* scala version == 2.13.12
 * sbt version == 1.10.7
 * a modern ide (intellij) 
 

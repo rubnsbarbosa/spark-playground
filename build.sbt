@@ -2,8 +2,8 @@ lazy val root = (project in file(".")).settings(
     version := "1.0.0-SNAPSHOT",
     name := "spark-playground",
     scalaVersion := "2.13.12",
-    organization := "com.data.eng",
-    mainClass := Some("com.data.eng.KafkaBatchMain"),
+    organization := "com.playground",
+    mainClass := Some("com.playground.PlaygroundMain"),
     scalacOptions += "-Ymacro-annotations"
 )
 

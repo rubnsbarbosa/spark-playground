@@ -28,10 +28,10 @@ object PlayDataFrame {
 
         val starWarsCharacters = Seq(
             (1, "Luke Skywalker", "172", "77", "19BBY", "male", "https://swapi.dev/api/people/1/"),
-            (2, "C-3PO",          "167", "75", "112BBY", null, "https://swapi.dev/api/people/2/"),
-            (3 ,"R2-D2",          "96",  "32", "33BBY",  null, "https://swapi.dev/api/people/3/"),
-            (4, "Darth Vader",    "202", "136","41.9BBY","male","https://swapi.dev/api/people/4/"),
-            (5, "Leia Organa",    "150", "49","19BBY","female", "https://swapi.dev/api/people/5/")
+            (2, "C-3PO", "167", "75", "112BBY", null, "https://swapi.dev/api/people/2/"),
+            (3 ,"R2-D2", "96", "32", "33BBY", null, "https://swapi.dev/api/people/3/"),
+            (4, "Darth Vader", "202", "136", "41.9BBY", "male", "https://swapi.dev/api/people/4/"),
+            (5, "Leia Organa", "150", "49", "19BBY", "female", "https://swapi.dev/api/people/5/")
         ).toDF("id", "name", "height", "mass", "birth_year", "gender", "url")
         starWarsCharacters
     }
