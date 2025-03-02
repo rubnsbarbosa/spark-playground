@@ -19,6 +19,19 @@ case class StarWarsCharacters(
     mass: String,
     birth_year: String,
     gender: String,
+    planet_visited_id: String,
+    url: String
+)
+
+case class StarWarsPlanets(
+    planet_id: Int,
+    p_name: String,
+    rotation_period: Int,
+    orbital_period: Int,
+    diameter: Int,
+    climate: String,
+    terrain: String,
+    population: String,
     url: String
 )
 
