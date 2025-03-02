@@ -27,12 +27,12 @@ object PlayDataFrame {
         import spark.implicits._
 
         val starWarsCharacters = Seq(
-            (1, "Luke Skywalker", "172", "77", "19BBY", "male", "https://swapi.dev/api/people/1/"),
-            (2, "C-3PO", "167", "75", "112BBY", null, "https://swapi.dev/api/people/2/"),
-            (3 ,"R2-D2", "96", "32", "33BBY", null, "https://swapi.dev/api/people/3/"),
-            (4, "Darth Vader", "202", "136", "41.9BBY", "male", "https://swapi.dev/api/people/4/"),
-            (5, "Leia Organa", "150", "49", "19BBY", "female", "https://swapi.dev/api/people/5/")
-        ).toDF("id", "name", "height", "mass", "birth_year", "gender", "url")
+            (1, "Luke Skywalker", "172", "77", "19BBY", "male", "1", "https://swapi.dev/api/people/1/"),
+            (2, "C-3PO", "167", "75", "112BBY", null, "1", "https://swapi.dev/api/people/2/"),
+            (3 ,"R2-D2", "96", "32", "33BBY", null, "2", "https://swapi.dev/api/people/3/"),
+            (4, "Darth Vader", "202", "136", "41.9BBY", "male", "3", "https://swapi.dev/api/people/4/"),
+            (5, "Leia Organa", "150", "49", "19BBY", "female", "4", "https://swapi.dev/api/people/5/")
+        ).toDF("id", "name", "height", "mass", "birth_year", "gender", "planet_visited_id", "url")
         starWarsCharacters
     }
 
@@ -40,12 +40,12 @@ object PlayDataFrame {
         import spark.implicits._
 
         val starWarsPlanets = Seq(
-            (1, "Tatooine", "23", "304", "10465", "arid", "desert", "200000", "https://swapi.dev/api/planets/1"),
-            (2, "Alderaan", "24", "364", "12500", "temperate", "mountains", "2000000000", "https://swapi.dev/api/planets/2"),
-            (3, "Yavin IV", "24", "4818", "10200", "tropical", "rainforests", "1000", "https://swapi.dev/api/planets/3"),
-            (4, "Hoth", "23", "549", "7200", "frozen", "tundra", "unknown", "https://swapi.dev/api/planets/4"),
-            (5, "Dagobah", "23", "341", "8900", "murky", "jungles", "unknown", "https://swapi.dev/api/planets/5")
-        ).toDF("id", "name", "rotation_period", "orbital_period", "diameter", "climate", "terrain", "population", "url")
+            (1, "Tatooine", 23, 304, 10465, "arid", "desert", "200000", "https://swapi.dev/api/planets/1"),
+            (2, "Alderaan", 24, 364, 12500, "temperate", "mountains", "2000000000", "https://swapi.dev/api/planets/2"),
+            (3, "Yavin IV", 24, 4818, 10200, "tropical", "rainforests", "1000", "https://swapi.dev/api/planets/3"),
+            (4, "Hoth", 23, 549, 7200, "frozen", "tundra", "unknown", "https://swapi.dev/api/planets/4"),
+            (5, "Dagobah", 23, 341, 8900, "murky", "jungles", "unknown", "https://swapi.dev/api/planets/5")
+        ).toDF("planet_id", "p_name", "rotation_period", "orbital_period", "diameter", "climate", "terrain", "population", "url")
         starWarsPlanets
     }
 
