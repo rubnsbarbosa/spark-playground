@@ -4,6 +4,7 @@ import org.apache.spark.sql.SparkSession
 import com.playground.spark.joins.PlayJoins._
 import com.playground.spark.dataset.PlayDataSet._
 import com.playground.spark.dataframe.PlayDataFrame._
+import com.playground.spark.rdd.PlayRdd.createRddSquares
 
 class Sandbox(sparkSession: SparkSession) extends Serializable {
     private val spark: SparkSession = sparkSession
@@ -22,6 +23,8 @@ class Sandbox(sparkSession: SparkSession) extends Serializable {
         fetchPlanetsDataset()
         fetchStarshipDataset()
         fetchSpeciesDataset()
+
+        createRddSquares(spark)
     }
 
     private def fetchStarWarsCharacters(): Unit = {
