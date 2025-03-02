@@ -64,7 +64,7 @@ class Sandbox(sparkSession: SparkSession) extends Serializable {
         val characters = getStarWarsCharactersDataFrame(spark)
         val planets = getStarWarsPlanetsDataFrame(spark)
 
-        val joinWithOrbitalPeriodFilter = JoinWithFilterInOrbitalPeriod(characters, planets)
+        val joinWithOrbitalPeriodFilter = joinWithFilterInOrbitalPeriod(characters, planets)
         joinWithOrbitalPeriodFilter.show()
     }
 

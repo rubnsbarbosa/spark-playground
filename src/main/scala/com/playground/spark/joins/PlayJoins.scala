@@ -16,7 +16,7 @@ object PlayJoins {
         innerJoinDataFrame
     }
 
-    def JoinWithFilterInOrbitalPeriod(characters: DataFrame, planets: DataFrame): DataFrame = {
+    def joinWithFilterInOrbitalPeriod(characters: DataFrame, planets: DataFrame): DataFrame = {
         val planetVisitedWithOrbitalPeriodLessThan500 = characters
             .join(planets, col("planet_visited_id").alias("planet_visited") === col("planet_id"), "inner")
             .filter(col("orbital_period") < 500)
