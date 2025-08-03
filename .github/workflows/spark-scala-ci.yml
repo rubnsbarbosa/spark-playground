@@ -1,0 +1,32 @@
+name: Spark Scala CI
+
+on: [push, pull_request]
+
+jobs:
+  continuos-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Cache SBT
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.ivy2/cache
+            ~/.sbt
+          key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
+          restore-keys: |
+            ${{ runner.os }}-sbt-
+
+      - name: Build with SBT
+        run: sbt compile
+
+      - name: Test with SBT
+        run: sbt test
